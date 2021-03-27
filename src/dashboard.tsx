@@ -19,7 +19,9 @@ const Dashboard = () => {
   const sendRequest = () => {
     let params = { location: searchText };
     return axios.get('/lowestratedparkinglots', { params }).then((data: AxiosResponse<YelpData>) => {
-      setYelpReviews(data.data.businesses);
+      if (data.data && data.data.businesses) {
+        setYelpReviews(data.data.businesses.sort((a, b) => a.rating - b.rating));
+      }
     });
   }
 
@@ -30,7 +32,7 @@ const Dashboard = () => {
   return (
     <div>
       Search Yelp Reviews By Location
-      <br/>
+      <br />
       <form onSubmit={sumbitHandler}>
         <input type="text" value={searchText} onChange={handleChange} />
         <button type="submit" onClick={sumbitHandler}>Search</button>

@@ -1,4 +1,5 @@
 import { Business } from './yelpData';
+import './App.css';
 
 interface YelpReviewProps {
   business: Business;
@@ -14,7 +15,7 @@ const YelpReview = (props: YelpReviewProps) => {
       <div>Review Count: {props.business.review_count}</div>
       <div>Address: {props.business.location.address1}</div>
       <div><a href={props.business.url}>Yelp Link</a></div>
-      <div>{props.business.image_url && <img src={props.business.image_url} />}</div>
+      <div>{props.business.image_url && <img src={props.business.image_url} className="App-image" />}</div>
       <div>Score: {score}</div>
     </div>
   );
