@@ -1,0 +1,3 @@
+node_modules
+src/server/__pycache__
+src/server/venv
