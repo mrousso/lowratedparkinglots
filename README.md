@@ -30,7 +30,7 @@ Run the following commands to set up a python3 virtual environment:
 
 Then install the following packages:
 
-`pip install flask python-dotenv`
+`pip install flask python-dotenv requests`
 
 ### Running Backend
 
