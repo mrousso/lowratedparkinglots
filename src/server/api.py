@@ -8,7 +8,7 @@ api_key = 'mi5qSSqdhmrNXBjLq5MBMwuqcS0q8aE4u52fwqrG8CkrBjjksgdV8ZblHdh4ThtDqQVFa
 def get_lowest_reated_parking():
   url = 'https://api.yelp.com/v3/businesses/search'
   passed_param = request.args.get('location', 'Los Angeles')
-  params = {'location': passed_param}
+  params = {'location': passed_param, 'categories': 'parking'}
   headers = {'Authorization': f'Bearer {api_key}'}
   r = requests.get(url, params=params, headers=headers)
   return r.content
